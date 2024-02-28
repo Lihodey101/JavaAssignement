@@ -14,12 +14,11 @@ public class NStrParserTest {
         List<NStrData> result = NStrParser.parseNstr(input);
         assertEquals(0, result.size());
     }
-
     @Test
     public void testParseCorrectTextRow() {
-        List<String> input = Arrays.asList("NStr('en'= 'Test');");
+        List<String> input = Arrays.asList("NStr(\"en = 'Deleting object'; ru = 'Удаление объекта';\");");
         List<NStrData> result = NStrParser.parseNstr(input);
-        assertEquals(1, result.size());
+        assertEquals(2, result.size());
     }
 
     @Test
